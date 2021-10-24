@@ -1,0 +1,77 @@
+.overlay{
+    background-color: black;
+    position: absolute;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+header{
+    background-image: url('/image/anhsieuxe.jpg');
+    height: 550px;
+    background-size: cover;
+    position: relative;
+}
+.navbar-div{
+    position:relative;
+    padding-left: 20%;
+    padding-right: 15%;
+}
+
+
+.container{
+    float: right;
+}
+
+.menu ul li{
+    margin-right: 25px;
+    list-style-type: none;
+    float: left;
+    display: block;
+    padding-top: 20px; ;
+}
+.menu ul li a{
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    font-weight:bolder;
+    text-decoration: none;
+}
+.search {
+
+    clear: both;
+}
+.text{
+    border: 2px solid gray;
+    border-radius: 20px;
+    width: 70%;
+}
+#searching{
+    color: white;
+}
+.button{
+    border-radius: 50px;
+    
+    
+}
+
+.clear{
+    clear: both;
+}
+.title{
+    padding-top: 5%;
+    position: relative;
+}
+.title h1{
+    color: white;
+    font-size: 80px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+}
+.title h2{
+    color: white;
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
