@@ -3,6 +3,7 @@ package com.springmvc.blogposts.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,11 @@ public class PostsDao {
 		String sql = "SELECT * FROM posts WHERE id = ?";
 		return jdbcTemplate.queryForObject(sql, new PostsMapper(), id);
 	}
-	
-	
+
+	public List<Posts> findByUsername(String username) {
+		String sql = "SELECT * FROM posts WHERE author = ?";
+		return jdbcTemplate.query(sql, new PostsMapper(), username);
+
+	}
 
 }

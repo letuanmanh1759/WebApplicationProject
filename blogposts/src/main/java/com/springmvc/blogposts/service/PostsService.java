@@ -21,4 +21,8 @@ public class PostsService {
 	public Posts findById(int id) {
 		return postsDao.findById(id);
 	}
+
+	public List<Posts> findByUsername(String username) {
+		return postsDao.findByUsername(username);
+	}
 }

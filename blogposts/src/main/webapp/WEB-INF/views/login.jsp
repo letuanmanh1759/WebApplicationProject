@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Blog Posts</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -20,16 +20,16 @@
         <div class="container" style="float: right;">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/blogposts/home">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Register</a>
+                    <a class="nav-link" href="/blogposts/register">Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login.html">Login</a>
+                    <a class="nav-link" href="#">Login</a>
                 </li>
             </ul>
             <form class="form-inline">
@@ -43,20 +43,21 @@
 
     <div class="container">
         <h1>Login</h1>
-        <form action="/action_page.php">
+        <form action="/blogposts/login" method='POST'>
             <div class="form-group">
                 <label for="username">UserName:</label>
                 <input type="username" class="form-control" id="username" placeholder="Username" name="username">
             </div>
             <div class="form-group">
-                <label for="pwd">Password:</label>
-                <input type="password" class="form-control" id="pwd" placeholder="Password" name="pswd">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" type="checkbox" name="remember"> Remember me
                 </label>
             </div>
+            <p style="color:red;">${message}</p>
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>

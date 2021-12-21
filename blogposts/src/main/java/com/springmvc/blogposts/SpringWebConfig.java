@@ -1,6 +1,8 @@
 package com.springmvc.blogposts;
 
-import java.sql.SQLException;
+
+
+import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,8 +14,6 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-
-//config bean
 
 @EnableWebMvc // mvc:annotation-driven
 @Configuration
@@ -34,13 +34,20 @@ public class SpringWebConfig extends WebMvcConfigurerAdapter {
 	}
 
 	@Bean
-	public JdbcTemplate jdbcTemplate() throws SQLException{
+	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/blogposts");
 		dataSource.setUsername("root");
 		dataSource.setPassword("toor");
-		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-		return jdbcTemplate;
+		return dataSource;
 	}
+
+	@Bean
+	public JdbcTemplate jdbcTemplate() {
+		JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource());
+		return jdbcTemplate;
+
+	}
+
 }
